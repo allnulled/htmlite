@@ -1,0 +1,18 @@
+{
+  "name": "htmlite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "htmlite.parser.js",
+  "bin": {
+    "htmlite": "./htmlite.bin.js"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/pegjs -o htmlite.parser.js htmlite.pegjs"
+  },
+  "keywords": [],
+  "author": "allnulled",
+  "license": "WTFPL",
+  "dependencies": {
+    "pegjs": "^0.10.0"
+  }
+}
