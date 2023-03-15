@@ -3,11 +3,13 @@ const files = process.argv.splice(2);
 const fs = require("fs");
 const htmlite = require(__dirname + "/htmlite.parser.js");
 let set_doctype = false;
+Iterating_args:
 for(let index = 0; index < files.length; index++) {
     const file = files[index];
     if(file.startsWith("--")) {
         if(file === "--doctype") {
             set_doctype = true;
+            continue Iterating_args;
         }
     }
     const htmlite_contents = fs.readFileSync(file).toString();

@@ -1,0 +1,9 @@
+@head {
+    @meta[charset="utf8"]
+    @title >Título del documento<
+} @body {
+    @head {}
+    @main {}
+    @aside {}
+    @footer {}
+}

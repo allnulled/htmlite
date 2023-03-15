@@ -385,82 +385,93 @@ function peg$parse(input, options) {
   }
 
   function peg$parseSentencia_de_tag() {
-    var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12;
+    var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13;
 
     s0 = peg$currPos;
-    if (input.charCodeAt(peg$currPos) === 64) {
-      s1 = peg$c1;
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c2); }
+    s1 = [];
+    s2 = peg$parse_();
+    while (s2 !== peg$FAILED) {
+      s1.push(s2);
+      s2 = peg$parse_();
     }
     if (s1 !== peg$FAILED) {
-      s2 = peg$parseNombre_de_tag();
+      if (input.charCodeAt(peg$currPos) === 64) {
+        s2 = peg$c1;
+        peg$currPos++;
+      } else {
+        s2 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c2); }
+      }
       if (s2 !== peg$FAILED) {
-        s3 = [];
-        s4 = peg$parse_();
-        while (s4 !== peg$FAILED) {
-          s3.push(s4);
-          s4 = peg$parse_();
-        }
+        s3 = peg$parseNombre_de_tag();
         if (s3 !== peg$FAILED) {
-          s4 = peg$parseIdentificador_de_tag();
-          if (s4 === peg$FAILED) {
-            s4 = null;
+          s4 = [];
+          s5 = peg$parse_();
+          while (s5 !== peg$FAILED) {
+            s4.push(s5);
+            s5 = peg$parse_();
           }
           if (s4 !== peg$FAILED) {
-            s5 = [];
-            s6 = peg$parse_();
-            while (s6 !== peg$FAILED) {
-              s5.push(s6);
-              s6 = peg$parse_();
+            s5 = peg$parseIdentificador_de_tag();
+            if (s5 === peg$FAILED) {
+              s5 = null;
             }
             if (s5 !== peg$FAILED) {
-              s6 = peg$parseClases_de_tag();
-              if (s6 === peg$FAILED) {
-                s6 = null;
+              s6 = [];
+              s7 = peg$parse_();
+              while (s7 !== peg$FAILED) {
+                s6.push(s7);
+                s7 = peg$parse_();
               }
               if (s6 !== peg$FAILED) {
-                s7 = [];
-                s8 = peg$parse_();
-                while (s8 !== peg$FAILED) {
-                  s7.push(s8);
-                  s8 = peg$parse_();
+                s7 = peg$parseClases_de_tag();
+                if (s7 === peg$FAILED) {
+                  s7 = null;
                 }
                 if (s7 !== peg$FAILED) {
-                  s8 = peg$parseEstilos_de_tag();
-                  if (s8 === peg$FAILED) {
-                    s8 = null;
+                  s8 = [];
+                  s9 = peg$parse_();
+                  while (s9 !== peg$FAILED) {
+                    s8.push(s9);
+                    s9 = peg$parse_();
                   }
                   if (s8 !== peg$FAILED) {
-                    s9 = [];
-                    s10 = peg$parse_();
-                    while (s10 !== peg$FAILED) {
-                      s9.push(s10);
-                      s10 = peg$parse_();
+                    s9 = peg$parseEstilos_de_tag();
+                    if (s9 === peg$FAILED) {
+                      s9 = null;
                     }
                     if (s9 !== peg$FAILED) {
-                      s10 = peg$parseAtributos_de_tag();
-                      if (s10 === peg$FAILED) {
-                        s10 = null;
+                      s10 = [];
+                      s11 = peg$parse_();
+                      while (s11 !== peg$FAILED) {
+                        s10.push(s11);
+                        s11 = peg$parse_();
                       }
                       if (s10 !== peg$FAILED) {
-                        s11 = [];
-                        s12 = peg$parse_();
-                        while (s12 !== peg$FAILED) {
-                          s11.push(s12);
-                          s12 = peg$parse_();
+                        s11 = peg$parseAtributos_de_tag();
+                        if (s11 === peg$FAILED) {
+                          s11 = null;
                         }
                         if (s11 !== peg$FAILED) {
-                          s12 = peg$parseHijos_de_tag_o_texto();
-                          if (s12 === peg$FAILED) {
-                            s12 = null;
+                          s12 = [];
+                          s13 = peg$parse_();
+                          while (s13 !== peg$FAILED) {
+                            s12.push(s13);
+                            s13 = peg$parse_();
                           }
                           if (s12 !== peg$FAILED) {
-                            peg$savedPos = s0;
-                            s1 = peg$c3(s2, s4, s6, s8, s10, s12);
-                            s0 = s1;
+                            s13 = peg$parseHijos_de_tag_o_texto();
+                            if (s13 === peg$FAILED) {
+                              s13 = null;
+                            }
+                            if (s13 !== peg$FAILED) {
+                              peg$savedPos = s0;
+                              s1 = peg$c3(s3, s5, s7, s9, s11, s13);
+                              s0 = s1;
+                            } else {
+                              peg$currPos = s0;
+                              s0 = peg$FAILED;
+                            }
                           } else {
                             peg$currPos = s0;
                             s0 = peg$FAILED;

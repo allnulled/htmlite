@@ -46,7 +46,7 @@
 Language = _* bloque:Bloque _* { return { html: transformar_a_html(bloque), ast: bloque } }
 Bloque = Sentencia*
 Sentencia = Sentencia_de_tag
-Sentencia_de_tag = "@"
+Sentencia_de_tag = _* "@"
   tag:Nombre_de_tag _*
   id:Identificador_de_tag? _*
   clazzes:Clases_de_tag? _*

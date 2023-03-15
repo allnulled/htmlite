@@ -7,7 +7,8 @@
     "htmlite": "./htmlite.bin.js"
   },
   "scripts": {
-    "build": "./node_modules/.bin/pegjs -o htmlite.parser.js htmlite.pegjs"
+    "build": "./node_modules/.bin/pegjs -o htmlite.parser.js htmlite.pegjs",
+    "test": "./htmlite.bin.js --doctype test/*.htmlite"
   },
   "keywords": [],
   "author": "allnulled",
