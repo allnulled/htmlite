@@ -13,11 +13,7 @@
   "keywords": [],
   "author": "allnulled",
   "license": "WTFPL",
-  "dependencies": {
-    "pegjs": "^0.10.0"
-  },
   "directories": {
     "test": "test"
-  },
-  "devDependencies": {}
+  }
 }
