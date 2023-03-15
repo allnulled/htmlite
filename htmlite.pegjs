@@ -60,10 +60,15 @@ Atributos_de_tag = "["
 Atributos_de_tag_contenido = [^\]]*
     { return text() }
 Hijos_de_tag_o_texto = (Texto_de_tag / Hijos_de_tag)
-Texto_de_tag = ">"
-  contenido:Texto_de_tag_contenido "<" _*
+Texto_de_tag = Texto_de_tag_1 / Texto_de_tag_2
+Texto_de_tag_1 = ">>"
+  contenido:Texto_de_tag_1_contenido "<<" _*
     { return contenido }
-Texto_de_tag_contenido = (!("<").)* { return text() }
+Texto_de_tag_2 = ">"
+  contenido:Texto_de_tag_2_contenido "<" _*
+    { return contenido }
+Texto_de_tag_1_contenido = (!("<<").)* { return text() }
+Texto_de_tag_2_contenido = (!("<").)* { return text() }
 Hijos_de_tag = "{" _*
   hijos:Hijos_de_tag_contenido _* "}"
     { return hijos }
@@ -73,7 +78,7 @@ Identificador_de_tag = "#"
     { return nombre }
 Clases_de_tag = Clase_de_tag*
 Clase_de_tag = "."
-  nombre:Nombre_de_tag?
+  nombre:Clase_de_tag_contenido?
     { return nombre }
 Estilos_de_tag = "/"
   estilos:Estilos_de_tag_contenido ";/"
@@ -81,8 +86,8 @@ Estilos_de_tag = "/"
 Estilos_de_tag_contenido = (!(";/").)*
     { return text() }
 Id_de_tag = [A-Za-z_\-] [A-Za-z0-9_\-]* { return text() }
-Nombre_de_tag = [A-Za-z_\-:.] [A-Za-z0-9_\-:.]*
-    { return text() }
+Nombre_de_tag = [A-Za-z_\-:.] [A-Za-z0-9_\-:.]* { return text() }
+Clase_de_tag_contenido = [A-Za-z_\-] [A-Za-z0-9_\-]* { return text() }
 _ = __ / ___ {}
 __ = " " / "\t" {}
 ___ = "\n" / "\r" {}

@@ -13,8 +13,9 @@ npm i -g htmlite
 ```js
 const output = require("htmlite").parse(`
 @body {
-  @div.main {
+  @div .main {
     @h1 > Título de página <
+    @h3 >> Subtítulo de página <b>que permite HTML dentro</b> <<
     @div {
         @textarea#entrada_1 [disabled=true]
     }
