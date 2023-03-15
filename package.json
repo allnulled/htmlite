@@ -1,13 +1,13 @@
 {
   "name": "htmlite",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lenguaje para abreviar la codificación de html.",
   "main": "htmlite.parser.js",
   "bin": {
-    "htmlite": "./htmlite.bin.js"
+    "htmlite": "htmlite.bin.js"
   },
   "scripts": {
-    "build": "./node_modules/.bin/pegjs -o htmlite.parser.js htmlite.pegjs",
+    "build": "pegjs -o htmlite.parser.js htmlite.pegjs",
     "test": "./htmlite.bin.js --doctype test/*.htmlite"
   },
   "keywords": [],
@@ -15,5 +15,9 @@
   "license": "WTFPL",
   "dependencies": {
     "pegjs": "^0.10.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
 }
